@@ -2,6 +2,7 @@
  * Created by onkar on 22-06-2018.
  */
 
+var incrVar = 0;
 $(document).ready(function () {
     $(document).bind('mousemove', function(e){
         $('#tail').css({
@@ -14,13 +15,6 @@ $(document).ready(function () {
         $("body").append("<div class='addedDiv' style='left:"+(e.pageX-10)+"px;top:0;padding-right:10px;margin-left:10px;' onclick='removeMe(this)'></div>");
 
     });
-
-    function removeMe(el){
-        event.stopImmediatePropagation();
-        el.parentNode.removeChild(el);
-    }
-
-    var incrVar = 0;
 
     for(var i=0;i<window.innerWidth/10;i++){
         var ruler1Str =   '<span class="numSection" num="'+(i*10)+'"  style="left:'+(incrVar)+'px;"></span>'+
@@ -37,3 +31,7 @@ $(document).ready(function () {
         incrVar+=100;
     }
 });
+function removeMe(el){
+    event.stopImmediatePropagation();
+    el.parentNode.removeChild(el);
+}
