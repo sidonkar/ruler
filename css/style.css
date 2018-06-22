@@ -1,0 +1,41 @@
+body{
+    overflow: hidden;
+}
+#tail,.addedDiv {
+    position: absolute;
+    float: left;
+    height: 100%;
+    border-left: 1px solid;
+    top:0;
+}
+.addedDiv:hover{
+    cursor: pointer;
+    border-width:10px;
+}
+.ruler{
+    width: 100%;
+    height: 1px;
+    border-top: 1px solid;
+    margin-top: 15px;
+    position:relative;
+}
+span.numSection,span.majorSection,span.minorSection {
+    position: absolute;
+    height: 15px;
+    border-left: 1px solid;
+}
+
+span.minorSection {
+    height: 5px;
+}
+span.numSection:before,span.minorSection.middle:before {
+    content: attr(num);
+    top: 15px;
+    position: absolute;
+    left: -5px;
+}
+span.minorSection.middle:before {
+    top: -15px;
+    left: -5px;
+    font-size:10px;
+}
