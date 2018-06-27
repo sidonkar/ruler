@@ -1,6 +1,3 @@
-body{
-    overflow: hidden;
-}
 #tail,.addedDiv {
     position: absolute;
     float: left;
@@ -8,34 +5,54 @@ body{
     border-left: 1px solid;
     top:0;
 }
+.slider{
+    position: absolute;
+    left: 98%;
+    top: -10px;
+    border: 10px solid red;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  z-index:1000;
+}
+.slider:hover{
+  cursor:pointer;
+}
+body{
+  overflow: hidden;
+}
 .addedDiv:hover{
-    cursor: pointer;
-    border-width:10px;
+  cursor: pointer;
+  border-width:10px;
 }
 .ruler{
-    width: 100%;
     height: 1px;
     border-top: 1px solid;
-    margin-top: 15px;
+    margin-top: 2em;
     position:relative;
+  font-family:monospace;
+  font-size:16px;
 }
 span.numSection,span.majorSection,span.minorSection {
     position: absolute;
     height: 15px;
+    top:-15px;
     border-left: 1px solid;
 }
 
 span.minorSection {
     height: 5px;
+    top: -6px;
 }
 span.numSection:before,span.minorSection.middle:before {
     content: attr(num);
-    top: 15px;
+    top: -16px;
     position: absolute;
-    left: -5px;
+    left: -7px;
+    font-size:14px;
 }
 span.minorSection.middle:before {
-    top: -15px;
-    left: -5px;
+    top: -2em;
+    left: -7px;
     font-size:10px;
 }
