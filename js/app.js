@@ -2,7 +2,7 @@
  * Created by onkar on 22-06-2018.
  */
 
-var incrVar = 0;
+var incrVar = 0,isDragging=false,isMDown=false;
 $(document).ready(function () {
     $(document).bind('mousemove', function(e){
         $('#tail').css({
