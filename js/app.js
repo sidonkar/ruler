@@ -11,6 +11,31 @@ $(document).ready(function () {
         });
     });
 
+    $('.slider').mousedown(function(e) {
+                isDragging = false;
+                isMDown = true;
+            })
+            .mousemove(function(e) {
+                isDragging = true;
+                if(isMDown==true)
+                      this.style.left = e.pageX-18+"px";
+            })
+            .mouseup(function(e) {
+                isMDown=false;
+                isDragging = false;
+            });
+
+    $(document).mousemove(function(e) {
+                isDragging = true;
+                if(isMDown==true)
+                      $('.slider')[0].style.left = e.pageX-18+"px";
+            })
+            .mouseup(function(e) {
+                isMDown=false;
+                isDragging = false;
+            });
+
+    
     $(document).bind('click', function(e){
         $("body").append("<div class='addedDiv' style='left:"+(e.pageX-10)+"px;top:0;padding-right:10px;margin-left:10px;' onclick='removeMe(this)'></div>");
 
